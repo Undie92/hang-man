@@ -16,6 +16,10 @@ def get_valid_word(words):
 
 print('Welcome to HangMan')
 
+    """
+    Rules and guide on how to play. 
+    """
+
 
 def hangman():
     word = get_valid_word(words)
@@ -28,7 +32,7 @@ def hangman():
     """
     We have to state how many chances the user has to guess the right word, a.k.a, lifes.
     """
-    lives = 5
+    lives = 7
 
 
     """
