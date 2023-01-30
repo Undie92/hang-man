@@ -20,10 +20,29 @@ Welcome text, username and guide on how to play.
 """ 
 
 print('Welcome to HangMan')
-name = input("What is your name?\n")
+while True:
+    name = input("Please enter your name: \n")
+    if not name.isalpha():
+        print("Invalid entry, you need to enter your name.")
+        continue
+    else:
+        break
+
 print('Hello,', name,'it´s time to play HangMan!')
+
 print('This is how the game works: \nYou will get a random english word, can be anything.\nYou will have to use letters on your keyboard to find the correct word.\nYou got 7 lives before it is Game Over!')
-start = input('Do you understand the rules? (Y/N)\n')
+start = 'Y'
+while True:
+    start = input('Do you understand the rules? (Y/N)\n')
+    if start == 'y' or start == 'Y':
+        print("Great, lets continue!")
+        break
+    else:
+        if start != 'y' or start != 'Y':
+            print("You need to type Y/y to continue")
+            continue
+            
+        
 
 
 def hangman():
@@ -82,7 +101,12 @@ hangman()
 The game will ask if the user would want to play the game again.
 """
 play_again = 'Y'
-while play_again == 'Y' or play_again == 'y':
+while True:
+    play_again == 'Y' or play_again == 'y'
     play_again = input('Would you like to play again? (Y/N)\n')
     if play_again == 'Y' or play_again == 'y':
         hangman()
+    else:
+        if play_again != 'Y' or play_again != 'y':
+            print('You need to write Y/y to start again')
+            continue
