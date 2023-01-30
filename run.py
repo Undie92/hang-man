@@ -14,11 +14,16 @@ def get_valid_word(words):
     
     return word.upper()
 
-print('Welcome to HangMan')
 
-    """
-    Rules and guide on how to play. 
-    """
+"""
+Welcome text, username and guide on how to play. 
+""" 
+
+print('Welcome to HangMan')
+name = input("What is your name?\n")
+print('Hello,', name,'it´s time to play HangMan!')
+print('This is how the game works: \nYou will get a random english word, can be anything.\nYou will have to use letters on your keyboard to find the correct word.\nYou got 7 lives before it is Game Over!')
+start = input('Do you understand the rules? (Y/N)\n')
 
 
 def hangman():
@@ -26,7 +31,7 @@ def hangman():
     word_letters = set(word)
     alphabet = set(string.ascii_uppercase)
     used_letters = set()  # This defines, what letter the user has guessed.
-    print('Start guessing')
+    print('Alright, it´s time to start guessing')
 
 
     """
@@ -78,6 +83,6 @@ The game will ask if the user would want to play the game again.
 """
 play_again = 'Y'
 while play_again == 'Y' or play_again == 'y':
-    play_again = input('Would you like to play again? (Y/N)')
+    play_again = input('Would you like to play again? (Y/N)\n')
     if play_again == 'Y' or play_again == 'y':
-         hangman()
+        hangman()
