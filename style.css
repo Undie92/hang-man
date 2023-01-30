@@ -1,0 +1,14 @@
+body {
+    background-color: darksalmon;
+}
+
+button {
+    width: 200px;
+    height: 40px;
+    background-color: #838181;
+    border: 1px solid black;
+    color: white;
+    text-transform: uppercase;
+    margin: 10px;
+    border-radius: 8px;
+}
