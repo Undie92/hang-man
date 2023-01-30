@@ -1,7 +1,10 @@
 import random
 from words import words
 import string
+import colorama
+from colorama import Fore, Back, Style
 
+colorama.init(autoreset=True)
 
 """
 Need to get a random word from words.py for the user to guess. 
@@ -23,23 +26,23 @@ print('Welcome to HangMan')
 while True:
     name = input("Please enter your name: \n")
     if not name.isalpha():
-        print("Invalid entry, you need to enter your name.")
+        print(Fore.RED + "Invalid entry, you need to enter your name.")
         continue
     else:
         break
 
 print('Hello,', name,'it´s time to play HangMan!')
 
-print('This is how the game works: \nYou will get a random english word, can be anything.\nYou will have to use letters on your keyboard to find the correct word.\nYou got 7 lives before it is Game Over!')
+print(Fore.GREEN + 'This is how the game works: \nYou will get a random english word, can be anything.\nYou will have to use letters on your keyboard to find the correct word.\nYou got 7 lives before it is Game Over!')
 start = 'Y'
 while True:
-    start = input('Do you understand the rules? (Y/N)\n')
+    start = input(Fore.BLUE + 'Do you understand the rules? (Y/N)\n')
     if start == 'y' or start == 'Y':
         print("Great, lets continue!")
         break
     else:
         if start != 'y' or start != 'Y':
-            print("You need to type Y/y to continue")
+            print(Fore.RED + "You need to type Y/y to continue")
             continue
             
         
@@ -64,7 +67,7 @@ def hangman():
     """
 
     while len(word_letters) > 0 and lives > 0:
-        print('You got', lives, 'lives left. You have guessed these letters: ', ' '.join(used_letters))
+        print(Fore.GREEN + 'You got', lives, Fore.GREEN + 'lives left. You have guessed these letters: ', Fore.BLUE + ' '.join(used_letters))
 
         word_list = [letter if letter in used_letters else '-' for letter in word]
         print('Current word: ', ' '.join(word_list))
@@ -78,18 +81,18 @@ def hangman():
             
             else: # If user is answering the wrong letter, one life is removed.
                 lives = lives - 1
-                print('\nYour letter,', user_letter, 'is not in the word.')
+                print(Fore.RED + '\nYour letter,', user_letter, 'is not in the word.')
 
         elif user_letter in used_letters:
-            print('\nThat letter is already used, try again!')
+            print(Fore.RED + '\nThat letter is already used, try again!')
 
         else:
-            print('\nThat is not a valid letter.')
+            print(Fore.RED + '\nThat is not a valid letter.')
     
     if lives == 0: #When lives reaches 0, the game ends, or if the word was guessed correctly.
-        print('Game over, sorry. The word was', word)
+        print(Fore.RED + 'Game over, sorry. The word was', word)
     else:
-        print('Congratulations! You guessed', word, 'and it was correct!!')
+        print(Fore.GREEN + 'Congratulations! You guessed', word, 'and it was correct!!')
 
 
 
@@ -108,5 +111,5 @@ while True:
         hangman()
     else:
         if play_again != 'Y' or play_again != 'y':
-            print('You need to write Y/y to start again')
+            print(Fore.RED + 'You need to write Y/y to start again')
             continue
