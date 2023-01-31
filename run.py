@@ -4,6 +4,11 @@ import string
 import colorama
 from colorama import Fore, Back, Style
 
+STATIC_URL = 'static/style.css'
+
+{% load static from staticfiles %} or {% load static %}
+<link rel='stylesheet' href="{% static 'static/style.css' %}">
+
 colorama.init(autoreset=True)
 
 """

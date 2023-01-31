@@ -1,0 +1,17 @@
+
+body {
+    font-family: Arial;
+    background-color: #4c4c4c;
+}
+
+
+button {
+    width: 200px;
+    height: 40px;
+    background-color: #857c7a;
+    border: 1px solid black;
+    color: black;
+    text-transform: uppercase;
+    margin: 10px;
+    border-radius: 8px;
+}
