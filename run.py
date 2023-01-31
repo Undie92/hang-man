@@ -36,7 +36,7 @@ print('Hello,', name, 'it´s time to play HangMan!')
 
 print(Fore.GREEN + 'This is how the game works:\n'
                    'You will get a random english word, can be anything.\n'
-                   'You will have to use letters on your keyboard to find'
+                   'You will have to use letters on your keyboard to find '
                    'the correct word.\n'
                    'You got 7 lives before it is Game Over!')
 start = 'Y'
@@ -70,7 +70,7 @@ def hangman():
     while len(word_letters) > 0 and lives > 0:
         print(Fore.GREEN + 'You got', lives, Fore.GREEN + 'lives left. You '
               'have'
-              'guessed these letters: ', Fore.BLUE + ' '.join(used_letters))
+              ' guessed these letters: ', Fore.BLUE + ' '.join(used_letters))
 
         word_list = [letter if letter in used_letters else '-'
                      for letter in word]
