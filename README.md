@@ -6,6 +6,8 @@ chosen randomly from an array of english words.
 
 [You can find the live project here](https://hangman-undie.herokuapp.com/)
 
+[Repository can be found here](https://github.com/Undie92/hang-man)
+
 ![Am i Responsive?](pictures/responsive.png)
 
 
